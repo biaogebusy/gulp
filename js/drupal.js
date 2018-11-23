@@ -1,3 +1,4 @@
-(function($){
-	foot = 1;
-}(jQuery))
+	var foot = function () {
+		var foot = 1;
+		return foot;
+	}

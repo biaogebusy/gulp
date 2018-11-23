@@ -22,10 +22,11 @@
     "url": "https://github.com/biaogebusy/gulp/issues"
   },
   "homepage": "https://github.com/biaogebusy/gulp#readme",
-  "dependencies": {
-    "gulp-sass": "^4.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-sass": "^4.0.2"
   }
 }
