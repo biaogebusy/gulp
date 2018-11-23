@@ -3,10 +3,41 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var eslint = require('gulp-eslint');
+var concat = require('gulp-concat'); // 把多个js文件合并
+var uglify = require('gulp-uglify'); // 压缩
 
-gulp.task('default',['styles', 'lint'], function(){
+gulp.task('default',['styles', 'copy-images', 'copy-html'], function(){
 	gulp.watch('sass/**/*.scss', ['styles']);
-	gulp.watch('js/**/*.js', ['lint']);
+	gulp.watch('/index.html', ['copy-html']);
+});
+
+gulp.task('scripts', function(){
+	gulp.src('js/**/*.js')
+			.pipe(concat('all.js'))
+			.pipe(gulp.dest('dist/js'));
+})
+
+gulp.task('scripts-dist', function () {
+	gulp.src('js/**/*.js')
+		.pipe(concat('all.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/js'));
+})
+
+/**
+ * 复制图片
+ */
+gulp.task('copy-images', function(){
+	gulp.src('images/*')
+			.pipe(gulp.dest('dist/img'));
+});
+
+/**
+ * 复制html
+ */
+gulp.task('copy-html', function () {
+	gulp.src('./index.html')
+		.pipe(gulp.dest('./dist'));
 });
 
 /**
@@ -17,13 +48,15 @@ gulp.task('styles', function(){
 	gulp.src('sass/**/*.scss')
 			// 有了这些文件就可以加入管道，使用sass进行处理，并转换成css
 			// 当sass源文件写法错误时，监听错误并输出，并不冲断构建，体验更好
-			.pipe(sass().on('error', sass.logError))
+			.pipe(sass({
+				outputStyle: 'compressed'
+			}).on('error', sass.logError))
 			// 在css生成之前，进行添加前缀处理，并指定浏览器
 			.pipe(autoprefixer({
 				browsers: ['last 2 versions']
 			}))
 			// 再使用gulp.dest()把生成的文件放到./css目录
-	    .pipe(gulp.dest('./css'));
+	    .pipe(gulp.dest('dist/css/'));
 });
 
 /**
