@@ -1,5 +1,5 @@
 {
-  "name": "gulp",
+  "name": "frontDev",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -24,5 +24,8 @@
   "homepage": "https://github.com/biaogebusy/gulp#readme",
   "dependencies": {
     "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
