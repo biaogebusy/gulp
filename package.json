@@ -26,6 +26,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-eslint": "^5.0.0",
     "gulp-sass": "^4.0.2"
   }
