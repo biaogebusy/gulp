@@ -1,4 +1,5 @@
-	var foot = function () {
-		var foot = 1;
-		return foot;
-	}
+	(function ($) {
+		$(document).ready(function () {
+			console.log('Hello world!')
+		})
+	}(jQuery))

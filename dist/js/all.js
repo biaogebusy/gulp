@@ -1,0 +1,1 @@
+(void jQuery(document).ready(function(){console.log("Hello world!")}))(void jQuery(document).ready(function(){console.log("Hello world!")}));
