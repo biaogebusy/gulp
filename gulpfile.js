@@ -5,6 +5,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var eslint = require('gulp-eslint');
 var concat = require('gulp-concat'); // 把多个js文件合并
 var uglify = require('gulp-uglify'); // 压缩
+var babel = require('gulp-babel'); // es6转换
 
 gulp.task('default',['styles', 'copy-images', 'copy-html'], function(){
 	gulp.watch('sass/**/*.scss', ['styles']);
@@ -23,12 +24,18 @@ gulp.task('dist', [
 
 gulp.task('scripts', function(){
 	gulp.src('js/**/*.js')
+			.pipe(babel({
+				presets: ['@babel/env']
+			}))
 			.pipe(concat('all.js'))
 			.pipe(gulp.dest('dist/js'));
 })
 
 gulp.task('scripts-dist', function () {
 	gulp.src('js/**/*.js')
+		.pipe(babel({
+			presets: ['@babel/env']
+		}))
 		.pipe(concat('all.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/js'));
