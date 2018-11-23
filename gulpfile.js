@@ -11,6 +11,16 @@ gulp.task('default',['styles', 'copy-images', 'copy-html'], function(){
 	gulp.watch('/index.html', ['copy-html']);
 });
 
+/**
+ * 设置开发生成任务
+ */
+gulp.task('dist', [
+	'copy-html',
+	'copy-images',
+	'styles',
+	'scripts-dist'
+]);
+
 gulp.task('scripts', function(){
 	gulp.src('js/**/*.js')
 			.pipe(concat('all.js'))
