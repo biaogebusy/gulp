@@ -1,15 +1,2 @@
-"use strict";
-
-(function ($) {
-  $(document).ready(function () {
-    console.log('Hello world!');
-  });
-})(jQuery);
-"use strict";
-
-(function ($) {
-  $(document).ready(function () {
-    var foot = 'es6';
-    console.log('Hello world!');
-  });
-})(jQuery);
+"use strict";jQuery(document).ready(function(){console.log("Hello world!")}),jQuery(document).ready(function(){console.log("Hello world!")});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyIsImRydXBhbC5qcyJdLCJuYW1lcyI6WyJqUXVlcnkiLCJkb2N1bWVudCIsInJlYWR5IiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6ImFBSUdBLE9BSEVDLFVBQVVDLE1BQU0sV0FDaEJDLFFBQVFDLElBQUksa0JDR2RKLE9BSkNDLFVBQVVDLE1BQU0sV0FFakJDLFFBQVFDLElBQUkiLCJmaWxlIjoiYWxsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXHQoZnVuY3Rpb24gKCQpIHtcblx0ICAkKGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbiAoKSB7XG5cdCAgICBjb25zb2xlLmxvZygnSGVsbG8gd29ybGQhJylcblx0ICB9KVxuXHR9KGpRdWVyeSkpIiwiXHQoZnVuY3Rpb24gKCQpIHtcblx0XHQkKGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbiAoKSB7XG5cdFx0XHRsZXQgZm9vdCA9ICdlczYnO1xuXHRcdFx0Y29uc29sZS5sb2coJ0hlbGxvIHdvcmxkIScpXG5cdFx0fSlcblx0fShqUXVlcnkpKSJdfQ==
